@@ -7,19 +7,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3ed6d6"
+
+
     tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Bulbasaur"
+            android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/tv_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:background="#ffff"
-        android:text="Bulbasaur"
 
-
-
-         />
 
 </LinearLayout>
