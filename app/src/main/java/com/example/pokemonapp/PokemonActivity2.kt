@@ -16,29 +16,25 @@ class PokemonActivity2 : AppCompatActivity() {
 
         binding = ActivityPokemon2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        val pokemonId = intent.getIntExtra("id", -1)
+        val pokemonId = intent.getIntExtra("id", 1)
         val pokemon = PokemonRepository.getPokemonById(pokemonId)
-        if (pokemon != null) {
-            binding.imgPokemon.setImageResource(pokemon.picture)
-            binding.tvName.text = pokemon.name
-            binding.tvWeight.text = "${pokemon.weight} kg"
-            binding.tvHeight.text = "${pokemon.height} cm"
-            var types = ""
-            for (type in pokemon.elementalType) {
-                types += type
-                if (type != pokemon.elementalType.last()) {
-                    types += ", "
-                }
+        pokemon?.let {
+            binding.apply {
+                imgPokemon.setImageResource(it.picture)
+                tvName.text = it.name
+                tvWeight.text = "${it.weight} kg"
+                tvHeight.text = "${it.height} inch"
+                tvType.text = it.elementalType.joinToString(", ")
             }
-            binding.tvType.text = types
-        }
-        else {
-            Log.e("pokemonIsNull", "Pokemon with ${pokemonId} is not exist")
-            binding.imgPokemon.setImageResource(R.drawable.ic_launcher_background)
-            binding.tvName.text = "Error"
-            binding.tvWeight.text = "Error"
-            binding.tvHeight.text = "Error"
-            binding.tvType.text = "Error"
+        } ?: run {
+            Log.e("pokemonIsNull", "Pokemon with $pokemonId does not exist")
+            binding.apply {
+                imgPokemon.setImageResource(R.drawable.ic_launcher_background)
+                tvName.text = "Error"
+                tvWeight.text = "Error"
+                tvHeight.text = "Error"
+                tvType.text = "Error"
+            }
         }
 
 
