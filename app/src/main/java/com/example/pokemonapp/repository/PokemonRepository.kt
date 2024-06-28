@@ -46,8 +46,8 @@ object PokemonRepository {
         )
     ).associateBy { it.id })
 
-    fun getPokemons(): HashMap<Int, Pokemon> {
-        return pokemons
+    fun getPokemons(): List<Pokemon> {
+        return pokemons.values.toList()
     }
     fun getPokemonById(Id: Int): Pokemon?{
         return pokemons[Id]

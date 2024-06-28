@@ -23,7 +23,7 @@ class PokemonActivity2 : AppCompatActivity() {
                 imgPokemon.setImageResource(it.picture)
                 tvName.text = it.name
                 tvWeight.text = "${it.weight} kg"
-                tvHeight.text = "${it.height} inch"
+                tvHeight.text = "${it.height} sm"
                 tvType.text = it.elementalType.joinToString(", ")
             }
         } ?: run {
