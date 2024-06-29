@@ -2,6 +2,7 @@ package com.example.pokemonapp.repository
 
 import com.example.pokemonapp.model.Pokemon
 import com.example.pokemonapp.R
+
 object PokemonRepository {
     private val pokemons: HashMap<Int, Pokemon> = HashMap(listOf(
         Pokemon(
@@ -9,7 +10,7 @@ object PokemonRepository {
             name = "Bulbasaur",
             weight = 69,
             height = 7,
-            elementalType = listOf("Grass","Poison"),
+            elementalType = listOf("Grass", "Poison"),
             picture = R.drawable.bulbasaur
         ),
         Pokemon(
@@ -17,7 +18,7 @@ object PokemonRepository {
             name = "Ivysaur",
             weight = 130,
             height = 10,
-            elementalType = listOf("Grass","Poison"),
+            elementalType = listOf("Grass", "Poison"),
             picture = R.drawable.ivysaur
         ),
         Pokemon(
@@ -25,7 +26,7 @@ object PokemonRepository {
             name = "Venusaur",
             weight = 1000,
             height = 20,
-            elementalType = listOf("Grass","Poison"),
+            elementalType = listOf("Grass", "Poison"),
             picture = R.drawable.venusaur
         ),
         Pokemon(
@@ -49,7 +50,8 @@ object PokemonRepository {
     fun getPokemons(): List<Pokemon> {
         return pokemons.values.toList()
     }
-    fun getPokemonById(Id: Int): Pokemon?{
+
+    fun getPokemonById(Id: Int): Pokemon? {
         return pokemons[Id]
     }
 

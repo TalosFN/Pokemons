@@ -27,6 +27,6 @@ class MainActivity : AppCompatActivity() {
         binding.main.adapter = adapter
         adapter.submit(PokemonRepository.getPokemons())
         binding.main.addItemDecoration(DividerItemDecoration(this, VERTICAL))
-            }
-        }
+    }
+}
 
