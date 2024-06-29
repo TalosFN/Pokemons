@@ -24,9 +24,10 @@
             <ImageView
                 android:id="@+id/img_pokemon"
                 android:layout_width="0dp"
-                android:layout_height="550dp"
+                android:layout_height="500dp"
                 android:background="@drawable/border"
                 android:src="@drawable/bulbasaur"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
