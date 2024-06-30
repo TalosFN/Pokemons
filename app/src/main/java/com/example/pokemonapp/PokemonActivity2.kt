@@ -38,10 +38,9 @@ class PokemonActivity2 : AppCompatActivity() {
         }
 
 
-        val buttonBack: Button = this.findViewById<Button>(R.id.btn_back)
-        buttonBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            this.startActivity(intent)
+        val backButton: Button = binding.btnBack
+        backButton.setOnClickListener {
+            finish()
         }
     }
 }
